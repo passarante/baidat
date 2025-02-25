@@ -1,30 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <title>{{ config('app.name', 'Laravel') }}</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans text-gray-900 antialiased">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-            <div>
-                <a href="/">
-                    <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-                </a>
-            </div>
+    <link rel="icon" href="{{ asset('theme/favicon.ico') }}" type="image/x-icon" />
 
-            <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('theme/plugins/bootstrap/dist/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('theme/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('theme/plugins/ionicons/dist/css/ionicons.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('theme/plugins/icon-kit/dist/css/iconkit.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('theme/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}">
+    <link rel="stylesheet" href="{{ asset('theme/dist/css/theme.min.css') }}">
+    <script src="{{ asset('theme/src/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+</head>
+
+<body>
+
+
+    <div class="auth-wrapper">
+        <div class="container-fluid h-100">
+            <div class="flex-row bg-white row h-100">
+                <div class="p-0 col-xl-8 col-lg-6 col-md-5 d-md-block d-lg-block d-sm-none d-none">
+                    <div class="lavalite-bg"
+                        style="background-image: url('{{ asset('theme/img/auth/login-bg.jpg') }}')">
+                        <div class="lavalite-overlay"></div>
+                    </div>
+                </div>
                 {{ $slot }}
             </div>
         </div>
-    </body>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="{{ asset('theme/src/js/vendor/jquery-3.3.1.min.js') }}"><\/script>')
+    </script>
+    <script src="{{ asset('theme/plugins/popper.js/dist/umd/popper.min.js') }}"></script>
+    <script src="{{ asset('theme/plugins/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('theme/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
+    <script src="{{ asset('theme/plugins/screenfull/dist/screenfull.js') }}"></script>
+    <script src="{{ asset('theme/dist/js/theme.js') }}"></script>
+
+</body>
+
 </html>
