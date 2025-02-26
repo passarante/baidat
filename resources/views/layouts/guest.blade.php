@@ -50,6 +50,10 @@
     <script src="{{ asset('theme/plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js') }}"></script>
     <script src="{{ asset('theme/plugins/screenfull/dist/screenfull.js') }}"></script>
     <script src="{{ asset('theme/dist/js/theme.js') }}"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/imask/7.6.1/imask.min.js'
+        integrity='sha512-+3RJc0aLDkj0plGNnrqlTwCCyMmDCV1fSYqXw4m+OczX09Pas5A/U+V3pFwrSyoC1svzDy40Q9RU/85yb/7D2A=='
+        crossorigin='anonymous'></script>
+    @stack('scripts')
 
 </body>
 
